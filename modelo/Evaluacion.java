@@ -24,12 +24,21 @@ public class Evaluacion {
         listaAlumnos.add(alumno);
     }
     
+//    public List<NotaAlumno> getAlumnosOrdenados() {
+//        List<NotaAlumno> ordenados = new ArrayList<>(listaAlumnos);
+//        Collections.sort(ordenados, Comparator.comparing(NotaAlumno::getApellido)
+//                                              .thenComparing(NotaAlumno::getNombre));
+//        return ordenados;
+//    }
     public List<NotaAlumno> getAlumnosOrdenados() {
         List<NotaAlumno> ordenados = new ArrayList<>(listaAlumnos);
-        Collections.sort(ordenados, Comparator.comparing(NotaAlumno::getApellido)
-                                              .thenComparing(NotaAlumno::getNombre));
+        ordenados.sort(
+            Comparator.comparing(NotaAlumno::getApellido, Comparator.nullsLast(String::compareTo))
+                      .thenComparing(NotaAlumno::getNombre, Comparator.nullsLast(String::compareTo))
+        );
         return ordenados;
     }
+
 
     public List<NotaAlumno> getListaAlumnos() {
         return listaAlumnos;
@@ -47,7 +56,7 @@ public class Evaluacion {
         if(!getListaAlumnos().isEmpty()){
             int total = this.totalAlumnos();
             double sumaAlumnos = 0;
-            for(int i=0;i<=total;i++){
+            for(int i=0;i<total;i++){
                 double nota = this.getListaAlumnos().get(i).getNota();
                 sumaAlumnos = sumaAlumnos + nota;
             }

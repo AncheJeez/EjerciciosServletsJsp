@@ -1,9 +1,3 @@
-<%-- 
-    Document   : formularioAlumnos
-    Created on : 10 dic 2025, 13:08:40
-    Author     : usuario
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ taglib prefix="c" uri="http://jakarta.ee/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
@@ -16,7 +10,7 @@
      <body>
         <h1>Formulario Alumno</h1>
         <br><br><br>
-        <form action="evaluar" method="post">
+        <form action="Ejercicio2" method="post">
             <label>Nombre</label>
             <input for="nombre" type="text" name="nombre" required="">
             <br>

@@ -58,7 +58,7 @@
 %>
 
 <br><br>
-<a href="introducirNotas.jsp">Añadir otro alumno</a>
+<a href="formularioAlumnos.jsp">Añadir otro alumno</a>
 
 </body>
 </html>
